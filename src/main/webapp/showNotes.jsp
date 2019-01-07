@@ -32,14 +32,14 @@
                     將 notes 綁定到表格上，分別呈現 id, title, date (10%)
                     -->
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{note.id}}</td>
+                        <td>{{note.title}}</td>
+                        <td>{{note.date}}</td>
                         <td>
                             <!--
                             將 click 綁到 vue 的 edit(note); (10%)
                             -->
-                            <button class="btn btn-primary">EDIT</button>
+                            <button class="btn btn-primary" v-on:click="editNote(note)">EDIT</button>
                             <button class="btn btn-danger" v-on:click='deleteNote(note);'>DELETE</button>
                         </td>
                     </tr>

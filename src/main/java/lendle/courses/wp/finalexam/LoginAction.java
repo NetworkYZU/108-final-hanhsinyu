@@ -6,6 +6,7 @@
 package lendle.courses.wp.finalexam;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,14 +30,20 @@ public class LoginAction extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String id=request.getParameter("id");
-        String password=request.getParameter("password");
-        HttpSession session=request.getSession();
+        String id = request.getParameter("id");
+        String password = request.getParameter("password");
+        String address;
+        HttpSession session = request.getSession();
+        if (id == "admin" && password == "admin") {
+            address = "/showNotes.jsp";
+        } else {
+            address = "/index.jsp";
+        }
         //當帳號=admin，密碼=admin時，通過登入（記得記錄在session）
         //並轉址到 showNotes.jsp
         //否則轉址到 index.jsp
         //請使用外轉址 (20%)
-        
+
         ////////////////////////////////////////////////////
     }
 
